@@ -8,7 +8,7 @@ Usage
 
 Edit the example.py file as per the requirement and run the following command
 
-python example.py
+	python example.py
 
 Contact
 ============

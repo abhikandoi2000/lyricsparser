@@ -74,6 +74,7 @@ class Parser:
 		lyrics = lyrics[:end]
 
 		#remove unwanted data
+		lyrics = lyrics.replace("\n", "")
 		lyrics = lyrics.replace("<br />", "\n")
 		lyrics = lyrics.strip()
 		self.lyrics = lyrics

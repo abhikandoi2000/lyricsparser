@@ -51,7 +51,8 @@ class Parser:
 		songdata = title.split(" - ")
 
 		#check for wrong title page
-		if songdata[0].lower() != self.artist or songdata[1].lower() != self.title:
+		#if songdata[0].lower() != self.artist or songdata[1].lower() != self.title:
+		if songdata[1].lower() != self.title:
 			print "wrong artist data: " + songdata[0] + "-" + songdata[1]
 			return ""
 
@@ -74,9 +75,11 @@ class Parser:
 		lyrics = lyrics[:end]
 
 		#remove unwanted data
+		lyrics = lyrics.replace('<div id="lyrics" class="SCREENONLY">', '')
 		lyrics = lyrics.replace("\n", "")
 		lyrics = lyrics.replace("<br />", "\n")
 		lyrics = lyrics.strip()
 		self.lyrics = lyrics
+		print lyrics
 
 		return lyrics
